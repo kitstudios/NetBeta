@@ -147,6 +147,7 @@ body {
   left: 0;
   text-align: center;
   font-size: 11px;
+  display: none;
 }
 #alert {
   background-color: #81818180;
@@ -180,9 +181,11 @@ body {
 /* The sidebar menu */
 .sidenav {
   top: 8px;
-  left: 5px;
   bottom: 3px;
+  width: 99%;
+  height: 4%;
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  margin: 0 auto;
   z-index: 1; /* Stay on top */
   overflow: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
@@ -194,12 +197,12 @@ body {
 
 /* The navigation menu links */
 .sidenavlist a {
-  -moz-border-radius:5px; 
+  -moz-border-radius:5px;
   -webkit-border-radius:5px;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(255 255 255 / 20%);
   transition: 0.1s;
-  border-radius: 5px;  
+  border-radius: 5px;
   display: block;
   padding: 3px;
   margin: 3px;
@@ -208,6 +211,7 @@ body {
   cursor: pointer;
   text-align: left;
   color: black;
+  line-height: 27px;
 }
 .sidenavlist a:hover {
   -moz-border-radius:5px; 
@@ -225,12 +229,12 @@ color: black !important;
   margin: 7px 0 7px 0px;
   height: 80%;
   overflow-y: hidden;
-  float: left;
-  display: block;
+  display: flex;
   padding: 0;
   list-style: none;
-  bottom: 40px;
-  position: relative;
+  position: absolute;
+  bottom: -2px;
+  left: 60px;
 }
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
@@ -239,13 +243,12 @@ color: black !important;
 
 /* Style page content */
 .main {
-  margin-left: 166px; /* Same as the width of the sidebar */
+  height: 90%; /* Same as the width of the sidebar */
   position: fixed;
   padding: 0px 10px;
-  top: 8px;
   right: 5px;
   left: 10px;
-  bottom: 3px;
+  bottom: 8px;
   backdrop-filter: blur(8px);
   background: rgba(0,0,0,0.600);
   border-radius: 8px;
@@ -276,7 +279,7 @@ color: black !important;
     background-color: gray;
     color: white;
     margin: 0 0 5px 0px;
-    width: calc(100% - 11%);
+    width: calc(100% - 2%);
   }
   .post > p {
   margin: 5px;
@@ -297,31 +300,36 @@ color: black !important;
     left: 172px;
   }
   .currentusertxt {
-    text-align: center;
     position: relative;
-    bottom: 2px;
-    font-size: 14px;
+    bottom: 95px;
+    /* left: 65px; */
+    right: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
+    padding: 8px;
+    width: min-content;
+    white-space: nowrap;
+    float: right;
+    border-radius: 8px;
   }
   form > input {
     max-width: 150px;
     }
     input, textarea {
-      width: calc(100% - 12%);
+      width: calc(100% - 2%);
       padding: 10px;
       margin: 5px 0;
-    border: 2px solid rgba(0,0,0,0.2);
-    border-radius: 8px;  
+      border: 2px solid rgba(0,0,0,0.2);
+      border-radius: 8px;
     }
     .logo {
       display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  bottom: 7px;
-  position: relative;
-  border-radius: 8px;
-  box-shadow: 0 0 20px 10px rgba(128, 0, 128, 0.5);
-  transition: box-shadow 0.3s ease-in-out;
+      margin-left: 5px;
+      bottom: 16px;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 0 20px 10px rgba(128, 0, 128, 0.5);
+      transition: box-shadow 0.3s ease-in-out;
     }
     #currentuser {
       font-weight: bold;
