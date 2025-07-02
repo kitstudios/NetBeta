@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+    
+	<title>Kit Network</title>
+</head>
+<body onload="loadPosts();">
+<div id="alert" style="display: none;">
+    <img class="alertImg" src="assets/img/alert.png" height="32" width="32">			
+    <a class="alertxt"></a>
+    <button class="confirmAlertButton">OK</button>
+</div>
+
+<div class="sidenav">
+    <img class="logo" src="assets/img/logo.png" height="48" width="48">    
+    <hr>
+  <p class="currentusertxt">Signed in as <a id="currentuser">Guest</a></p>  
+<hr>
+<br>
+<br>
+  <div class="sidenavlist">
+   <a class="white" onclick="openTab('Home')">Home</a>
+   <a class="white" id="profileSideBtn" onclick="openTab('Profile')">Profile</a>
+   <a class="white" onclick="openTab('Login')">Login</a>
+   <a class="white" onclick="openTab('Register')">Register</a>
+  </div>
+  <br>
+  <div class="white" id="versionstring"></div>
+</div>
+
+<!-- Page content -->
+<div class="main">
+  <div id="Home" class="tab" style="">
+    <div id="content">
+      <div id="postSection">
+          <h2>Send a post</h2>
+          <form id="postForm">
+              <textarea id="postinput" placeholder="You must be signed in to write a post" required disabled></textarea>
+              <br>
+              <br>
+              <button class="postbutton" type="submit" disabled>Post it!</button>
+          </form>
+      </div>
+
+          <div class="messagesection">
+          <h2>Posts</h2>
+          <div id="postlist"><p>Loading posts...</p></div>
+          </div>
+   </div>
+  </div>
+
+  <div id="Profile" class="tab" style="display:none;">
+    <h2>Profile Settings</h2>
+    <form id="updateProfileForm"> 
+        <label for="bio" class="bioLabelSettings">Bio:</label> 
+        <textarea style="height: 15px;" id="bio" name="bio" required></textarea><br>
+        <label for="profilePic">Profile Picture:</label> 
+        <input type="file" id="profilePic" name="profilePic" accept="image/*"><br>         
+        <button type="submit">Update Profile</button>
+        <br>
+        <hr>
+        <h1>Log out</h1>
+        <button onclick="signOut();">Sign out of account</button>
+    </form>
+</div>
+
+	
+
+    <div id="Login" class="tab" style="display:none;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <br>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="Register" class="tab" style="display:none;">
+        <h2>Register</h2>
+        <p>Network is currently in development. The database may need to be reset again in the future. <br><strong>Make sure you have typed the right information, as it cannot be changed later on.</strong></p>
+        <form id="registerForm">
+            <input type="text" id="regUsername" placeholder="Username" required>
+            <br>
+            <input type="password" id="regPassword" placeholder="Password" required>
+            <br>
+            <input type="email" id="regEmail" placeholder="Email" required>
+            <br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+
+</div>
+<script async src="assets/js/script.js"></script>
+</body>
+</html>
